@@ -3,8 +3,18 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=01e86893010a1b87e69a213faa753ebd"
 
 DEPENDS = "bazel-native protobuf-native util-linux-native protobuf"
-SRCREV = "c8875cbb1341f6ca14dd0ec908f1dde7d67f7808"
-SRC_URI = "git://github.com/tensorflow/tensorflow.git;branch=r1.13 \
+
+# in order to get this to work we need to point to my hacked version
+# of tensorflow on github
+#
+# this was the original:
+# SRCREV = "c8875cbb1341f6ca14dd0ec908f1dde7d67f7808"
+# SRC_URI = "git://github.com/tensorflow/tensorflow.git;branch=r1.13
+#
+# the first two lines point to my stuff:
+#
+SRCREV = "c063412ee644e9992c2d81209ac637a7096d9f6a"
+SRC_URI = "git://github.com/RobertBerger/tensorflow.git;branch=r1.13+ \
            file://0001-SyntaxError-around-async-keyword-on-Python-3.7.patch \
            file://0001-support-musl.patch \
            file://0001-use-local-bazel-to-workaround-bazel-paralle-issue.patch \
